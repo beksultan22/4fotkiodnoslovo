@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .img{
+            width: 220px;
+            height: 220px;
+        }
+        body {
+            background-color: cornflowerblue;
+        }
+        .button{
+            display: inline-block;
+            font-size: 30px;
+            width: 35px;
+            height: 35px;
+            background-color: lemonchiffon;
+            color: dimgrey;
+            font-family: "cool font", Serif;
+            margin: 5px;
+            box-shadow: 1px 0px 15px rgba(1,0,0,20);
+            border-radius: 12px 12px 12px 12px;
+        }
+        img{
+            box-shadow: 1px 0px 50px rgba(1,0,0,8);
+            width: 150px;
+            height: 150px;
+            margin:20px
+        }
+        .group{
+            margin-top: 5px;
+        }
+        @font-face {
+         font-family: "cool font";
+         src: url("19081.ttf");
+        }
+
+    </style>
+</head>
+<body>
+    <center>
+        <img src="kosa.jpg" class="img">
+        <img src="kosa%20instrument.jpg" class="img"><br>
+        <img src="kosa%20ostrov.jpg" class="img">
+        <img src="kosa%20ostrov%202.jpg" class="img">
+        <div class="group">
+            <div class="button"></div>
+            <div class="button"></div>
+            <div class="button"></div>
+            <div class="button"></div>
+        </div>
+
+        <div class="group">
+            <div class="button" onclick="tap(this.id)" id="1">к</div>
+            <div class="button" onclick="tap(this.id)" id="2">ц</div>
+            <div class="button" onclick="tap(this.id)" id="3">а</div>
+            <div class="button" onclick="tap(this.id)" id="4">м</div>
+            <div class="button" onclick="tap(this.id)" id="5">с</div>
+        </div>
+        <div class="group">
+            <div class="button" onclick="tap(this.id)" id="6">о</div>
+            <div class="button" onclick="tap(this.id)" id="7">л</div>
+            <div class="button" onclick="tap(this.id)" id="8">ж</div>
+            <div class="button" onclick="tap(this.id)" id="9">г</div>
+            <div class="button" onclick="tap(this.id)" id="10">б</div>
+        </div>
+       <script>
+            function tap(id) {
+                if(document.getElementsByClassName("button")[0].innerText == ""){
+                    document.getElementsByClassName("button")[0].innerText = document.getElementById(id).innerText
+                }
+                else if (document.getElementsByClassName("button")[1].innerText == ""){
+                    document.getElementsByClassName("button")[1].innerText = document.getElementById(id).innerText
+                }
+                else if (document.getElementsByClassName("button")[2].innerText == ""){
+                    document.getElementsByClassName("button")[2].innerText = document.getElementById(id).innerText
+                }
+                else if (document.getElementsByClassName("button")[3].innerText == "") {
+                    document.getElementsByClassName("button")[3].innerText = document.getElementById(id).innerText
+                    if (document.getElementsByClassName("button")[0].innerText + document.getElementsByClassName("button")[1].innerText
+                    + document.getElementsByClassName("button")[2].innerText + document.getElementsByClassName("button")[3].innerText =="коса"){
+                        alert("You Win")
+                        location.reload()
+                    } else{
+                        alert("неправильно")
+                        document.getElementsByClassName("button")[0].innerText = ""
+                        document.getElementsByClassName("button")[1].innerText = ""
+                        document.getElementsByClassName("button")[2].innerText = ""
+                        document.getElementsByClassName("button")[3].innerText = ""
+                    }
+                }
+            }
+       </script>
+</body>
+</html>
